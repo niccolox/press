@@ -2,4 +2,9 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* This file is for your main application CSS */
+@import url("https://re.due.social/symbols/Karla/Karla-VariableFont_wght.ttf");
+body {
+  background: #1da674;
+  font-family: "Karla";
+  padding: 2rem;
+}
