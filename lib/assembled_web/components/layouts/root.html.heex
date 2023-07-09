@@ -11,7 +11,7 @@
     <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
     </script>
 
-    <% if Mix.env == :prod do %>
+    <%= if Mix.env == :prod do %>
     <script defer id="plausible" data-domain="assemble.press" src="https://session.place/js/script.outbound-links.compat.js"></script>
     <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
     <% end %>
