@@ -22,12 +22,9 @@
       background: #1d9186;
       font-family: "Karla";
       padding: 2rem;
-      font-size: 24px;
+      font-size: 15px;
     }
-    p {
-      padding-bottom: 1.2rem;
-      line-height: 2.4rem;
-    }
+    p { line-height: 1.8rem; }
     a {
       padding: 0.2rem;
       border: 1px dashed crimson;
@@ -41,6 +38,16 @@
       padding: 1.2rem;
     }
     h1 { font-size: 2rem; }
+    .column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: auto;
+    }
+    @media (min-width: 1440px) {
+      .column { max-width: 1080px; }
+      .row { display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; }
+    }
     </style>
 
   </head>
