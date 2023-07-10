@@ -2,9 +2,11 @@
 /*@import "tailwindcss/components";*/
 /*@import "tailwindcss/utilities";*/
 
+/* background: #1da674; Rails colorscheme. */
+
+/*
 @import url("https://re.due.social/symbols/Karla/Karla-VariableFont_wght.ttf");
 body {
-  /* background: #1da674; Rails colorscheme. */
   background: #1d9186;
   font-family: "Karla";
   padding: 2rem;
@@ -28,3 +30,4 @@ a {
   border-radius: 1.2rem;
   padding: 1.2rem;
 }
+*/
