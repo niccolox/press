@@ -1,0 +1,14 @@
+<% use Phoenix.HTML %>
+
+<h1>Pages</h1>
+<ul style="list-style: none;">
+<%= for page <- Press.all_pages do %>
+  <li id="<%= page.key %>" style="margin-bottom: 3rem;">
+    <h2><%= link page.name, to: "/page/#{page.key}" %></h2>
+    <p><time><%= page.day %></time> by <%= page.composer %></p>
+    <p>Labeled as <%= Enum.join(page.labels, ", ") %></p>
+
+    <%= raw page.summary %>
+  </li>
+<% end %>
+</ul>

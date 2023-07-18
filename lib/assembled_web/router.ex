@@ -20,6 +20,12 @@ defmodule AssembledWeb.Router do
     get "/corp", PageController, :corp
   end
 
+  scope "/page", AssembledWeb do
+    pipe_through :browser
+    get "/", PageController, :index
+    get "/:key", PageController, :show
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", AssembledWeb do
   #   pipe_through :api

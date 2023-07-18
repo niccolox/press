@@ -1,0 +1,9 @@
+<% use Phoenix.HTML %>
+
+<%= link "← All pages", to: "/page" %>
+
+<h1><%= @page.name %></h1>
+<p><time><%= @page.day %></time> by <%= @page.composer %></p>
+<p>Labeled as <%= Enum.join(@page.labels, ", ") %></p>
+
+<%= raw @page.body %>
