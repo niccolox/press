@@ -1,6 +1,6 @@
 defmodule Press do
   use NimblePublisher, build: Press.Page, as: :pages,
-    from: Application.app_dir(:assembled, "priv/pages/*.md"),
+    from: Application.app_dir(:assembled, "priv/page/*.md"),
     highlighters: [:makeup_elixir, :makeup_erlang]
 
   @pages Enum.sort_by(@pages, & &1.day, {:desc, Date})
