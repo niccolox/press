@@ -25,7 +25,8 @@ config :assembled, AssembledWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "7V8tAXy0Gh2gY3+8zZ0YKJUgbnyEOIel3M5lQRDny4sCz/mx2lSa/pdGRmZ0OkEO",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    esbuild: { Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    esbuild: { Esbuild, :install_and_run, [:catalogue, ~w(--sourcemap=inline --watch)]},
     # tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
   ]
 
@@ -54,11 +55,13 @@ config :assembled, AssembledWeb.Endpoint,
 
 # Watch static and templates for browser reloading.
 config :assembled, AssembledWeb.Endpoint,
+  reloadable_compilers: [:gettext, :elixir, :app, :surface],
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/assembled_web/(controllers|live|components)/.*(ex|heex)$"
+      ~r"lib/assembled_web/(controllers|live|components)/.*(ex|heex|sface|js)$",
+      ~r"priv/catalogue/.*(ex)$"
     ]
   ]
 

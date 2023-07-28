@@ -1,6 +1,8 @@
 defmodule AssembledWeb.Router do
   use AssembledWeb, :router
 
+  import Surface.Catalogue.Router
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -45,6 +47,13 @@ defmodule AssembledWeb.Router do
 
       live_dashboard "/dashboard", metrics: AssembledWeb.Telemetry
       forward "/mailbox", Plug.Swoosh.MailboxPreview
+    end
+  end
+
+  if Mix.env() == :dev do
+    scope "/" do
+      pipe_through :browser
+      surface_catalogue "catalogue"
     end
   end
 end

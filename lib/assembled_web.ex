@@ -61,6 +61,7 @@ defmodule AssembledWeb do
       only: [get_csrf_token: 0, view_module: 1, view_template: 1]
     # Include general helpers for rendering HTML
     unquote(html_helpers())
+    import Surface
   end end
 
   defp html_helpers do quote do
@@ -87,5 +88,14 @@ defmodule AssembledWeb do
   """
   defmacro __using__(which) when is_atom(which) do
     apply(__MODULE__, which, [])
+  end
+
+  def surface_live_view do
+    quote do
+      use Surface.LiveView,
+        layout: {AssembledWeb.Layouts, :app}
+
+      unquote(html_helpers())
+    end
   end
 end
