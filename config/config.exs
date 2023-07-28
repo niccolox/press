@@ -8,7 +8,7 @@
 import Config
 
 config :assembled,
-  ecto_repos: [Assembled.Repo]
+  ecto_repos: [Assembled.Repo, Beacon.Repo]
 
 # Configures the endpoint
 config :assembled, AssembledWeb.Endpoint,

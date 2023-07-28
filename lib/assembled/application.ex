@@ -17,10 +17,11 @@ defmodule Assembled.Application do
       # Start Finch
       {Finch, name: Assembled.Finch},
       # Start the Endpoint (http/https)
-      AssembledWeb.Endpoint
+      AssembledWeb.Endpoint,
       # Start a worker by calling: Assembled.Worker.start_link(arg)
       # {Assembled.Worker, arg}
-    ]
+     {Beacon, sites: [[site: :release, endpoint: AssembledWeb.Endpoint, data_source: Assembled.BeaconDataSource]]}
+]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options

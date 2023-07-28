@@ -36,6 +36,7 @@ defmodule Assembled.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:beacon, github: "beaconCMS/beacon"},
       {:ecto_sql, "~> 3.10"},
       {:esbuild, "~> 0.7", runtime: Mix.env() == :dev},
       {:finch, "~> 0.13"},
@@ -54,10 +55,10 @@ defmodule Assembled.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:postgrex, ">= 0.0.0"},
       {:surface, "~> 0.11"},
+      {:surface_catalogue, "~> 0.6.0"},
       {:swoosh, "~> 1.3"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
-      {:surface_catalogue, "~> 0.6.0"},
     ]
   end
 
@@ -70,7 +71,7 @@ defmodule Assembled.MixProject do
   defp aliases do
     [
       setup: ["deps.get", "ecto.setup", "assets.setup", "assets.build"],
-      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
+      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs", "run priv/repo/beacon_seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["esbuild.install --if-missing"],

@@ -56,4 +56,12 @@ defmodule AssembledWeb.Router do
       surface_catalogue "catalogue"
     end
   end
+
+  use Beacon.Router
+
+  scope "/" do
+    pipe_through :browser
+    beacon_admin "/admin"
+    beacon_site "/release", site: :release
+  end
 end
