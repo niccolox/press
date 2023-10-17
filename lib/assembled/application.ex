@@ -8,24 +8,16 @@ defmodule Assembled.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Start the Telemetry supervisor
       AssembledWeb.Telemetry,
-      # Start the Ecto repository
       Assembled.Repo,
-      # Start the PubSub system
       {Phoenix.PubSub, name: Assembled.PubSub},
-      # Start Finch
       {Finch, name: Assembled.Finch},
-      # Start the Endpoint (http/https)
       AssembledWeb.Endpoint
-      # Start a worker by calling: Assembled.Worker.start_link(arg)
-      # {Assembled.Worker, arg}
+      # {Assembled.Worker, arg} # Assembled.Worker.start_link(arg)
     ]
 
-    # See https://hexdocs.pm/elixir/Supervisor.html
-    # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Assembled.Supervisor]
-    Supervisor.start_link(children, opts)
+    Supervisor.start_link(children,
+      [strategy: :one_for_one, name: Assembled.Supervisor])
   end
 
   # Tell Phoenix to update the endpoint configuration
