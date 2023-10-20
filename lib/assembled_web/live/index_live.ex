@@ -21,7 +21,7 @@ defmodule AssembledWeb.IndexLive do
       }
     </style>
 
-    <h1>Assembled Index</h1>
+    <h1><a href="/home">Assembled Index</a></h1>
 
     {#for measure <- @index}
       <div class="measure">
