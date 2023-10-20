@@ -27,8 +27,8 @@ defmodule Assembled.MixProject do
   end
 
   # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["lib", "test/support"] ++ catalogues()
-  defp elixirc_paths(:dev), do: ["lib"] ++ catalogues()
+  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(:dev), do: ["lib"]
   defp elixirc_paths(_), do: ["lib"]
 
   # Specifies your project dependencies.
@@ -41,6 +41,7 @@ defmodule Assembled.MixProject do
       {:finch, "~> 0.13"},
       {:floki, ">= 0.30.0", only: :test},
       {:gettext, "~> 0.20"},
+      {:httpoison, "~> 2.1.0"},
       {:jason, "~> 1.2"},
       {:makeup_elixir, "~> 0.16"},
       {:makeup_erlang, "~> 0.1"},
@@ -52,10 +53,11 @@ defmodule Assembled.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view, "~> 0.19.0"},
       {:plug_cowboy, "~> 2.5"},
+      {:poison, "~> 5.0"},
       {:postgrex, ">= 0.0.0"},
       {:surface, "~> 0.11"},
-      {:surface_catalogue, "~> 0.6.0"},
       {:swoosh, "~> 1.3"},
+      {:tailwind, "~> 0.2.0", runtime: Mix.env() == :dev},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
     ]
@@ -73,13 +75,9 @@ defmodule Assembled.MixProject do
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
-      "assets.setup": ["esbuild.install --if-missing"],
-      "assets.build": ["esbuild default"],
-      "assets.deploy": ["esbuild default --minify", "phx.digest"]
+      "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
+      "assets.build": ["tailwind default", "tailwind lib", "esbuild default"],
+      "assets.deploy": ["tailwind default --minify", "tailwind lib --minify", "esbuild default --minify", "phx.digest"]
     ]
-  end
-
-  def catalogues do
-    [ "priv/catalogue" ]
   end
 end

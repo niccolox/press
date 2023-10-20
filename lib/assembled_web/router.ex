@@ -1,8 +1,6 @@
 defmodule AssembledWeb.Router do
   use AssembledWeb, :router
 
-  import Surface.Catalogue.Router
-
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -18,7 +16,8 @@ defmodule AssembledWeb.Router do
 
   scope "/", AssembledWeb do
     pipe_through :browser
-    get "/", PageController, :home
+    live "/", IndexLive
+    get "/home", PageController, :home
     get "/corp", PageController, :corp
   end
 
@@ -53,7 +52,6 @@ defmodule AssembledWeb.Router do
   if Mix.env() == :dev do
     scope "/" do
       pipe_through :browser
-      surface_catalogue "catalogue"
     end
   end
 end
