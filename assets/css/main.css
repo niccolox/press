@@ -1,25 +1,25 @@
 html, body { height: 100vh; width: 100vw; }
 
-/* @import url("https://re.due.social/symbols/Karla/Karla-VariableFont_wght.ttf"); */
+@import url("/Karla-VariableFont_wght.ttf");
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;500&display=swap');
+
 body {
   /* background: #1da674; Rails colorscheme. */
+  font-family: "Playpen Sans";
   background: #1d9186;
-  /* font-family: "Karla"; */
   padding: 2rem;
   font-size: 15px;
 }
+
+main { width: 40rem; margin: auto; }
 
 p {
   line-height: 1.2rem;
   padding-bottom: 1rem;
 }
 
-a {
-  padding: 0.2rem;
-  border: 1px dashed crimson;
-  text-decoration: underline;
-  border-radius: 0.4rem;
-}
+ol, ul { margin-bottom: 1rem; }
+ol { list-style: cjk-ideographic; }
 
 .headline {
   background: rgba(201, 240, 201, 0.5);
@@ -47,3 +47,22 @@ img { max-width: 100%; }
 .grid .headline { border-radius: 0 0 1.2rem 1.2rem; }
 .grid .headline:nth-child(1) { border-radius: 1.2rem 0 1.2rem 1.2rem; }
 .grid .headline:last-child { border-radius: 0 1.2rem 1.2rem 1.2rem; }
+
+a {
+  padding: 0 0.2rem;
+  border: 2px dotted #b46;
+  border-top: none;
+} a:hover { background: #b46; }
+
+code {
+  color: #f8f8f2;
+  background-color: #272822aa;
+  padding: 0.2rem;
+}
+.makeup .hll {background-color: #49483e}
+.bash, .makeup {
+  display: block;
+  color: #f8f8f2; background: #272822aa;
+  padding: 0.4rem 0.8rem;
+  margin-bottom: 1rem;
+}

@@ -2,12 +2,6 @@
  * see https://hexdocs.pm/makeup
  */
 
-.makeup .hll {background-color: #49483e}
-.bash, .makeup {
-  padding: 0.4rem;
-  color: #f8f8f2;
-  background-color: #272822;
-}
 .makeup .unselectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;

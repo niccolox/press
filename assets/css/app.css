@@ -1,7 +1,7 @@
-@import "./_components.css"; /* scoped CSS rules for components */
-@import "./main.css";
-@import "./makeup.css";
-
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@import "./_components.css"; /* Surface UI */
+@import "./makeup.css";
+@import "./main.css";
