@@ -11,7 +11,7 @@ body {
   font-size: 15px;
 }
 
-main { width: 40rem; margin: auto; }
+main { max-width: 40rem; margin: auto; }
 
 p {
   line-height: 1.2rem;
