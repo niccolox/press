@@ -5,7 +5,7 @@
 <h1><%= @page.name %></h1>
 <p><time><%= @page.day %></time> by <%= @page.composer %></p>
 
-<p>Labeled as <%= Enum.join(@page.labels, ", ") %></p>
+<p>Labeled as:<br/><%= Enum.join(@page.labels, ", ") %></p>
 
 <main>
 <%= raw @page.body %>
