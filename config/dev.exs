@@ -56,11 +56,11 @@ config :assembled, AssembledWeb.Endpoint,
 config :assembled, AssembledWeb.Endpoint,
   reloadable_compilers: [:gettext, :elixir, :app, :surface],
   live_reload: [
+    reload_page_on_css_changes: true,
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
       ~r"lib/assembled_web/(controllers|live|components)/.*(ex|heex|sface|js)$",
-      ~r"priv/catalogue/.*(ex)$"
       ~r"page/.*(md)$",
     ]
   ]
