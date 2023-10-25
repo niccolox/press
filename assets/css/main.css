@@ -1,20 +1,21 @@
 html, body { height: 100vh; width: 100vw; }
 
-@import url("/Karla-VariableFont_wght.ttf");
-@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;500&display=swap');
+@font-face{ font-family: 'Karla'; src: url("/fonts/Karla-VariableFont_wght.ttf"); }
+@font-face{ font-family: 'Playpen'; src: url("/fonts/PlaypenSans-VariableFont_wght.ttf"); }
 
 body {
   /* background: #1da674; Rails colorscheme. */
-  font-family: "Playpen Sans";
   background: #1d9186;
   padding: 1rem;
   font-size: 15px;
+  font-family: "Karla";
 }
 
 main {
   max-width: 40rem; margin: auto; margin-bottom: 4rem;
   background: #d2a53de0; border: 4px solid #272822aa;
   padding: 1rem;
+  font-family: "Playpen";
 }
 
 p {
