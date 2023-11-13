@@ -1,6 +1,4 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "bulma/css/bulma-rtl.min.css";
 
 @import "./_components.css"; /* Surface UI */
 @import "./makeup.css";
