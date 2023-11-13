@@ -1,5 +1,5 @@
 defmodule Record.US.Congress.XML do
-  @doc"""
+  @moduledoc"""
   require "processor/congress"
   require "record/us/congress"
   record = Record::US::Congress.load_place('118hr1'); nil

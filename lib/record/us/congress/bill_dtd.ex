@@ -1,5 +1,5 @@
 defmodule Record.US.Congress.BillDTD do
-  @doc """
+  @moduledoc """
   require "measure"
   require "nokogiri"
   require_relative './xml'

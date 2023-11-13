@@ -1,5 +1,5 @@
 defmodule Record.US.Congress.Measure do
-  @doc """
+  @moduledoc """
   class Measure
     def initialize(marker, label, heading, source, submeasures, key)
       @marker = marker
