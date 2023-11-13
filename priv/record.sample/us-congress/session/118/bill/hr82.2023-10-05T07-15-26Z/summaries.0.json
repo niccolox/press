@@ -1,0 +1,22 @@
+{
+    "pagination": {
+        "count": 1
+    },
+    "request": {
+        "billNumber": "82",
+        "billType": "hr",
+        "billUrl": "https://api.congress.gov/v3/bill/118/hr/82?format=json",
+        "congress": "118",
+        "contentType": "application/json",
+        "format": "json"
+    },
+    "summaries": [
+        {
+            "actionDate": "2023-01-09",
+            "actionDesc": "Introduced in House",
+            "text": " <p><b>Social Security Fairness Act of 2023</b></p> <p>This bill repeals provisions that reduce Social Security benefits for individuals who&nbsp;receive other benefits, such as a pension from a state or local government. </p> <p>The bill eliminates the <em>government pension offset</em>, which in various instances reduces Social Security benefits for spouses, widows, and widowers who also receive government pensions of their own. </p> <p>The bill also eliminates the <em>windfall elimination provision</em>, which in some instances reduces Social Security benefits for individuals who&nbsp;also receive a pension or disability benefit from an employer that did not withhold Social Security taxes. </p> <p>These changes are effective for benefits payable after December 2023.</p>",
+            "updateDate": "2023-01-23T16:33:36Z",
+            "versionCode": "00"
+        }
+    ]
+}

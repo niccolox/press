@@ -12,9 +12,6 @@ defmodule Record.US.Congress do
     |> Enum.map(&String.to_integer/1)
   end
 
-  @doc"""
-  record = Record.US.Congress.bills_in(99) |> hd
-  """
   def bills_in session do
     (System.get_env("MEASURE_ADDRESS") <> "/session/#{session}/bill/*")
     |> Path.wildcard
@@ -26,14 +23,10 @@ defmodule Record.US.Congress do
     |> Enum.map(& &1 |> Tuple.to_list |> Enum.join("."))
   end
 
-  @doc"""
-  # Example has 264 cosponsors.
-  rec = Record.US.Congress.read "/session/118/bill/hr82.2023-03-17T17-45-42Z"
-  """
   def read record do
     @angles |> Map.keys |> Enum.map(fn angle ->
       nodes = (System.get_env("MEASURE_ADDRESS") <> record <> "/#{angle}.*.json"
-      ) |> Path.wildcard |> Enum.sort |> IO.inspect
+      ) |> Path.wildcard |> Enum.sort
 
       { angle,
         nodes |> Enum.map(fn node ->

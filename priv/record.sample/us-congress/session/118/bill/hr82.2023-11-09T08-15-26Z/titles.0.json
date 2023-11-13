@@ -1,0 +1,31 @@
+{
+    "pagination": {
+        "count": 3
+    },
+    "request": {
+        "billNumber": "82",
+        "billType": "hr",
+        "billUrl": "https://api.congress.gov/v3/bill/118/hr/82?format=json",
+        "congress": "118",
+        "contentType": "application/json",
+        "format": "json"
+    },
+    "titles": [
+        {
+            "title": "Social Security Fairness Act of 2023",
+            "titleType": "Display Title"
+        },
+        {
+            "billTextVersionCode": "IH",
+            "billTextVersionName": "Introduced in House",
+            "title": "Social Security Fairness Act of 2023",
+            "titleType": "Short Title(s) as Introduced"
+        },
+        {
+            "billTextVersionCode": "IH",
+            "billTextVersionName": "Introduced in House",
+            "title": "To amend title II of the Social Security Act to repeal the Government pension offset and windfall elimination provisions.",
+            "titleType": "Official Title as Introduced"
+        }
+    ]
+}

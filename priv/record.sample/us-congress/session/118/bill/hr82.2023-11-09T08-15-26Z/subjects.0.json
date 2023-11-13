@@ -1,0 +1,26 @@
+{
+    "pagination": {
+        "count": 3
+    },
+    "request": {
+        "billNumber": "82",
+        "billType": "hr",
+        "billUrl": "https://api.congress.gov/v3/bill/118/hr/82?format=json",
+        "congress": "118",
+        "contentType": "application/json",
+        "format": "json"
+    },
+    "subjects": {
+        "legislativeSubjects": [
+            {
+                "name": "Government employee pay, benefits, personnel management"
+            },
+            {
+                "name": "Social security and elderly assistance"
+            }
+        ],
+        "policyArea": {
+            "name": "Social Welfare"
+        }
+    }
+}
