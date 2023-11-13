@@ -28,7 +28,7 @@ defmodule Assembled.MixProject do
 
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "test/support"]
-  defp elixirc_paths(:dev), do: ["lib"]
+  defp elixirc_paths(:dev), do: ["lib"] ++ catalogues()
   defp elixirc_paths(_), do: ["lib"]
 
   # Specifies your project dependencies.
@@ -58,10 +58,20 @@ defmodule Assembled.MixProject do
       {:poison, "~> 5.0"},
       {:postgrex, ">= 0.0.0"},
       {:surface, "~> 0.11"},
+      {:surface_bulma, "~> 0.5"},
+      {:surface_catalogue, "~> 0.6"},
       {:swoosh, "~> 1.3"},
       {:tailwind, "~> 0.2.0", runtime: Mix.env() == :dev},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
+    ]
+  end
+
+  def catalogues do
+    [
+      "priv/catalogue",
+      "deps/surface/priv/catalogue",
+      "deps/surface_bulma/priv/catalogue",
     ]
   end
 

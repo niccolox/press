@@ -6,6 +6,7 @@
 
 # General application configuration
 import Config
+import_config("contexts.exs")
 
 config :assembled,
   ecto_repos: [Assembled.Repo]
@@ -29,17 +30,18 @@ config :assembled, AssembledWeb.Endpoint,
 # at the `config/runtime.exs`.
 config :assembled, Assembled.Mailer, adapter: Swoosh.Adapters.Local
 
+node = [
+  cd: Path.expand("../assets", __DIR__),
+  env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)},
+]
+
 # Configure esbuild (the version is required)
 config :esbuild,
   version: "0.17.11",
-  default: [
-    cd: Path.expand("../assets", __DIR__),
-    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)},
-    args: ~w(
-      js/app.js --bundle --target=es2017
-      --outdir=../priv/static/assets
-      --external:/fonts/* --external:/images/*
-    ) ]
+  default: node ++ [ args: ~w( js/app.js --bundle --target=es2017
+      --outdir=../priv/static/assets --external:/fonts/* --external:/images/* ) ],
+  catalogue: node ++ [ args: ~w( ../deps/surface_catalogue/assets/js/app.js
+    --bundle --target=es2016 --minify --outdir=../priv/static/assets/catalogue) ]
 
 # Configure tailwind (the version is required)
 config :tailwind,
