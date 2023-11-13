@@ -22,19 +22,16 @@ defmodule Record.US.CongressTest do
 
   describe "read/1" do
     test "combines pages inside each of the record's angles" do
-      assert(
-        Congress.read("/session/118/bill/hr82.2023-10-05T07-15-26Z")[:cosponsors]
-        |> length == 296)
+      (Congress.read("/session/118/bill/hr82.2023-10-05T07-15-26Z")[:cosponsors]
+      |> length == 296) |> assert
 
-      assert(
-        Congress.read("/session/118/bill/hr82.2023-11-09T08-15-26Z")[:cosponsors]
-        |> length == 300)
+      (Congress.read("/session/118/bill/hr82.2023-11-09T08-15-26Z")[:cosponsors]
+      |> length == 300) |> assert
     end
 
     test "Assumes ambiguous record based on recency" do
-      assert(
-        Congress.read("/session/118/bill/hr82.*")[:cosponsors]
-        |> length == 300)
+      (Congress.read("/session/118/bill/hr82.*")[:cosponsors]
+      |> length == 300) |> assert
     end
   end
 end
