@@ -36,6 +36,7 @@ defmodule Assembled.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:deep_merge, "~> 1.0"},
       {:dotenv, "~> 3.0.0", only: [:dev, :test]},
       {:ecto_sql, "~> 3.10"},
       {:esbuild, "~> 0.7", runtime: Mix.env() == :dev},
