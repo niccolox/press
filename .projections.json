@@ -58,8 +58,13 @@
     "template": [
       "defmodule {dirname|camelcase|capitalize}.{basename|camelcase|capitalize}ViewTest do",
       "  use ExUnit.Case, async: true",
-      "",
       "  alias {dirname|camelcase|capitalize}.{basename|camelcase|capitalize}View",
+      "",
+      "  describe \"...\" do",
+      "    test \"...\" do",
+      "      assert 1 != 2",
+      "    end",
+      "  end",
       "end"
     ]
   },
