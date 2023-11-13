@@ -1,0 +1,28 @@
+<style>
+  .choices {
+    margin: 1rem 0;
+    display: flex;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+  button { position: relative; }
+</style>
+
+<section class="choices" >
+  <#slot/>
+  <div class="buttons has-addons">
+    {#for {option, num} <- Enum.with_index(@options)}
+    <Button value={option}
+      click={if Enum.member?(@disabled, option), do: nil, else: @choose}
+      disabled={Enum.member?(@disabled, option)}
+      class={
+        selected: Enum.member?(@choices, option),
+        disabled: Enum.member?(@disabled, option) }
+    >
+      {@labels[option] || option }
+    </Button>
+    {/for}
+  </div>
+</section>
