@@ -24,9 +24,12 @@ defmodule Record.US.Congress do
   end
 
   def read record do
+    record_node = (
+      System.get_env("MEASURE_ADDRESS") <> record
+      |> Path.wildcard |> Enum.sort |> Enum.reverse |> hd)
+
     @angles |> Map.keys |> Enum.map(fn angle ->
-      nodes = (System.get_env("MEASURE_ADDRESS") <> record <> "/#{angle}.*.json"
-      ) |> Path.wildcard |> Enum.sort
+      nodes = (record_node <> "/#{angle}.*.json") |> Path.wildcard |> Enum.sort
 
       { angle,
         nodes |> Enum.map(fn node ->

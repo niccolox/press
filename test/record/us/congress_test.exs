@@ -30,5 +30,11 @@ defmodule Record.US.CongressTest do
         Congress.read("/session/118/bill/hr82.2023-11-09T08-15-26Z")[:cosponsors]
         |> length == 300)
     end
+
+    test "Assumes ambiguous record based on recency" do
+      assert(
+        Congress.read("/session/118/bill/hr82.*")[:cosponsors]
+        |> length == 300)
+    end
   end
 end
