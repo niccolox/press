@@ -16,8 +16,11 @@ defmodule AssembledWeb.IndexLive do
       else: classes ++ [choice]
     classes |> IO.inspect
 
-    { :noreply, socket |> assign(:classes, classes) }
-  end
+    { :noreply, socket
+    |> assign(:classes, classes)
+    # add class in index.
+    }
+end
 
   def mount _params, _session, socket do
     idx = Assembled.Rails.index("hconres", 110) |> Enum.map(fn {_,m} -> m end)

@@ -5,7 +5,7 @@ defmodule Assembled.MixProject do
     [
       app: :assembled,
       version: "0.1.0",
-      elixir: "~> 1.14",
+      elixir: "~> 1.15",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
@@ -37,9 +37,11 @@ defmodule Assembled.MixProject do
   defp deps do
     [
       {:deep_merge, "~> 1.0"},
+      {:desktop, "~> 1.5"},
       {:dotenv, "~> 3.0.0", only: [:dev, :test]},
       {:ecto_sql, "~> 3.10"},
       {:esbuild, "~> 0.7", runtime: Mix.env() == :dev},
+      {:ex_unit_notifier, path: "../ex_unit_notifier"},
       {:finch, "~> 0.13"},
       {:floki, ">= 0.30.0", only: :test},
       {:gettext, "~> 0.20"},

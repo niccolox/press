@@ -7,16 +7,26 @@ defmodule Assembled.Application do
 
   @impl true
   def start(_type, _args) do
-    children = [
+    apps = [
       AssembledWeb.Telemetry,
       Assembled.Repo,
       {Phoenix.PubSub, name: Assembled.PubSub},
       {Finch, name: Assembled.Finch},
-      AssembledWeb.Endpoint
+      AssembledWeb.Endpoint,
       # {Assembled.Worker, arg} # Assembled.Worker.start_link(arg)
     ]
 
-    Supervisor.start_link(children,
+    apps = case Mix.env do
+      :test -> apps
+      _ -> apps ++
+        [{Desktop.Window, [
+          app: :assembled,
+          id: AssembledScreen,
+          url: &AssembledWeb.Endpoint.url/0,
+        ]}]
+    end
+
+    Supervisor.start_link(apps,
       [strategy: :one_for_one, name: Assembled.Supervisor])
   end
 

@@ -17,9 +17,7 @@ config :assembled, Assembled.Repo,
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
 config :assembled, AssembledWeb.Endpoint,
-  # Binding to loopback ipv4 address prevents access from other machines.
-  # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
-  http: [ip: {127, 0, 0, 1}, port: 4444],
+  http: [ip: {0, 0, 0, 0}, port: 4444],
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
