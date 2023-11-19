@@ -72,3 +72,9 @@ config :phoenix, :json_library, Jason
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"
+
+config :assembled, :generators,
+  migration: true,
+  binary_id: true,
+  timestamp_type: :utc_datetime,
+  sample_binary_id: "11111111-1111-1111-1111-111111111111"
