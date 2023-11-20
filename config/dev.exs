@@ -26,10 +26,10 @@ config :assembled, AssembledWeb.Endpoint,
     esbuild: { Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch) ]},
     esbuild: { Esbuild, :install_and_run, [:catalogue, ~w(--sourcemap=inline --watch) ]},
     tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]},
+
     # node: ["node_modules/shadow-cljs/cli/runner.js", "watch", "app", cd: Path.expand("../assets", __DIR__) ],
     # yarn: ["run", "hoplon", cd: Path.expand("../assets", __DIR__) ],
-    bash: [ "-c", "node_modules/.bin/shadow-cljs watch app --force-spawn", cd: Path.expand("../assets", __DIR__) ],
-    # [broken] "./node_modules/.bin/shadow-cljs": ["watch", "app", cd: Path.expand("../assets", __DIR__) ],
+    bash: [ "-c", "node_modules/.bin/shadow-cljs watch app", cd: Path.expand("../assets", __DIR__) ],
   ]
 
 # ## SSL Support
