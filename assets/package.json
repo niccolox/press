@@ -2,5 +2,8 @@
   "dependencies": {
     "bulma": "^0.9.4",
     "daisyui": "^3.5.1"
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.26.0"
   }
 }

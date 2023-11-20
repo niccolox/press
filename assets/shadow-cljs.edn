@@ -1,0 +1,13 @@
+;; shadow-cljs configuration
+{:source-paths ["src"]
+ :dependencies []
+ :dev-http {9999 "../priv/static"}
+
+ :builds
+ {:app
+  {:output-dir "../priv/static/render"
+   :asset-path "/render",
+   :target :browser
+   :modules {:app {:init-fn app.main/main!}}
+   :devtools {:after-load app.main/reload!}}
+ }}
