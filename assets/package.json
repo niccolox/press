@@ -5,5 +5,8 @@
   },
   "devDependencies": {
     "shadow-cljs": "^2.26.0"
+  },
+  "scripts": {
+    "hoplon": "shadow-cljs watch app"
   }
 }

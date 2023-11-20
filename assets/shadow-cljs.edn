@@ -1,6 +1,13 @@
 ;; shadow-cljs configuration
 {:source-paths ["src"]
- :dependencies []
+ ;:nrepl {:port 9000}
+
+ :dependencies
+ [
+  ;[nrepl "0.8.3"]
+  [hoplon/hoplon "7.5.0"]
+  ]
+
  :dev-http {9999 "../priv/static"}
 
  :builds
@@ -8,6 +15,9 @@
   {:output-dir "../priv/static/render"
    :asset-path "/render",
    :target :browser
-   :modules {:app {:init-fn app.main/main!}}
-   :devtools {:after-load app.main/reload!}}
- }}
+   :modules {:app {:init-fn press.page.index/main} }
+   :devtools {:after-load press.page.index/init!
+              :http-root "../priv/static"
+              :http-port 9999
+              }}}
+ }

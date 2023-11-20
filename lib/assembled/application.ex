@@ -18,12 +18,13 @@ defmodule Assembled.Application do
 
     apps = case Mix.env do
       :test -> apps
-      _ -> apps ++
+      :noop -> apps ++
         [{Desktop.Window, [
           app: :assembled,
           id: AssembledScreen,
           url: &AssembledWeb.Endpoint.url/0,
         ]}]
+      _ -> apps
     end
 
     Supervisor.start_link(apps,

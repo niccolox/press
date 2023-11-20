@@ -7,6 +7,6 @@
   (println "App loaded!"))
 
 (defn reload! []
-  (println "Code updated.")
-  (println "Trying values:" value-a value-b))
-
+  (println "Code has been changed.")
+  (js/console.log (.getElementById js/document "playground"))
+  )
