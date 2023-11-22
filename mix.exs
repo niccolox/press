@@ -50,7 +50,7 @@ defmodule Assembled.MixProject do
       {:makeup_elixir, "~> 0.16"},
       {:makeup_erlang, "~> 0.1"},
       {:nimble_publisher, "~> 1.0"},
-      {:phoenix, "~> 1.7.3"},
+      {:phoenix, "~> 1.7.10"},
       {:phoenix_ecto, "~> 4.4"},
       {:phoenix_html, "~> 3.3"},
       {:phoenix_live_dashboard, "~> 0.8.0"},

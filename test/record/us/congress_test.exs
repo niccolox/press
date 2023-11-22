@@ -2,10 +2,8 @@ defmodule Record.US.CongressTest do
   use ExUnit.Case, async: true
   alias Record.US.Congress
 
-  setup do
-    System.put_env("MEASURE_ADDRESS",
-      Application.app_dir(:assembled, "priv/record.sample/us-congress"))
-  end
+  setup do System.put_env("MEASURE_ADDRESS",
+    Application.app_dir(:assembled, "priv/record.sample/us-congress")) end
 
   describe "sessions" do
     test "only picks up sessions recorded in cache" do

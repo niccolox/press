@@ -11,19 +11,19 @@
 
 <h1><a href="/home">Assembled Index</a></h1>
 
-<p><code>{@classes |> Jason.encode!}</code></p>
-<p><code>{@sessions |> Jason.encode!}</code></p>
-
+<Choice options={@possible_sessions} choose="press_session" choices={@sessions}>
+  Congressional Session</Choice>
 <Choice options={@possible_classes} choose="press_class" choices={@classes}>
-Measure classes</Choice>
+  Measure Class</Choice>
 
-{#for measure <- @index}
+{#for measure <- @assembled_index}
   <div class="measure">
     <h2>
       {measure["angles"]["index"]["congress"]}
       {measure["angles"]["index"]["type"]}
       {measure["angles"]["index"]["number"]}
     </h2>
+
     <code>{measure |> Poison.encode!}</code>
   </div>
 {/for}
