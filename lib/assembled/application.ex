@@ -18,7 +18,7 @@ defmodule Assembled.Application do
 
     apps = case Mix.env do
       :test -> apps
-      :dev -> apps ++
+      :noop -> apps ++
         [{Desktop.Window, [
           app: :assembled,
           id: AssembledScreen,
