@@ -1,5 +1,17 @@
 # Assembled
 
+Quick launch:
+
+```bash
+git clone https://base.bingo/code/press
+cd press
+mix setup
+cp sample.env .call
+mix phx.server
+```
+
+## Phoenix Background
+
 To start your Phoenix server:
 
   * Run `mix setup` to install and setup dependencies
