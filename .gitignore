@@ -36,8 +36,10 @@ npm-debug.log
 /assets/node_modules/
 /assets/vendor/
 
-# Ignore generated js hook files for components
+# Ignore generated code
 assets/js/_hooks/
-
-# Ignore generated CSS file for components
 assets/css/_components.css
+priv/static
+
+# ignore local run calls
+.call
