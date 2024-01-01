@@ -5,8 +5,16 @@ Quick launch:
 ```bash
 git clone https://base.bingo/code/press
 cd press
-mix setup
 cp sample.env .call
+nix-shell --command 'mix setup && mix phx.server'
+
+# or one by one...
+nix-shell --command 'mix setup'
+nix-shell --command 'mix phx.server'
+
+# or in a running shell.
+nix-shell
+mix setup
 mix phx.server
 ```
 
